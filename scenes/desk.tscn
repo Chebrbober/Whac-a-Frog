@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://33x455vlkd34"]
+
+[ext_resource type="Texture2D" uid="uid://ccifx6ynw1n27" path="res://resources/bg.png" id="1_0iqh6"]
+[ext_resource type="Script" uid="uid://ce2fhyv8417hi" path="res://scripts/desk.gd" id="1_em11a"]
+[ext_resource type="PackedScene" uid="uid://cftifgwaaxgmx" path="res://scenes/frog.tscn" id="2_em11a"]
+[ext_resource type="FontFile" uid="uid://dwrs68ec4iqx0" path="res://resources/Kenney Pixel.ttf" id="4_8atfi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vxfw4"]
+font = ExtResource("4_8atfi")
+font_size = 32
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Desk" type="Node2D" unique_id=1781012608]
+script = ExtResource("1_em11a")
+frog_scene = ExtResource("2_em11a")
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=1876563324]
+position = Vector2(192, 108)
+texture = ExtResource("1_0iqh6")
+
+[node name="Timer" type="Timer" parent="." unique_id=2004553772]
+wait_time = 2.0
+autostart = true
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1891513739]
+offset_right = 29.0
+offset_bottom = 24.0
+text = "0"
+label_settings = SubResource("LabelSettings_vxfw4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
