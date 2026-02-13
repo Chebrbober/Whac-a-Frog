@@ -16,10 +16,22 @@ func play_in_out():
 
 func play_hurted_out():
 	state_machine.travel("HurtedOut", true)
+	shake_once(0.4, 0.6)
+	frog_hurted.emit()
+
+func shake_once(duration: float, strength: float):
+	# Создаем локальный Tween (он удалится сам после завершения)
+	var tween = create_tween()
+	var start_pos = position
+	
+	# Делаем 4 быстрых рывка в случайные стороны
+	for i in range(4):
+		var offset = Vector2(randf_range(-strength, strength), randf_range(-strength, strength))
+		tween.tween_property(self, "position", start_pos + offset, duration / 8.0)
+		tween.tween_property(self, "position", start_pos, duration / 8.0)
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if is_leaving == true: return
 	elif event is InputEventMouseButton:
 			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 				play_hurted_out()
-				emit_signal("frog_hurted")

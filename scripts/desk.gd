@@ -9,6 +9,7 @@ var frog_array: Array = []
 var score: int = 0
 
 func _ready() -> void:
+	$FadeTransition/AnimationPlayer.play("fade_out")
 	if timer == null:
 		return
 	
@@ -50,7 +51,7 @@ func _on_timer_timeout() -> void:
 	else:
 		print("Все лягушки заняты, ждем...")
 
-	if timer.wait_time > 0.2:
+	if timer.wait_time > 0.4:
 		timer.wait_time -= 0.05
 		print("Новое время ожидания: ", timer.wait_time)
 		current_speed += 0.1

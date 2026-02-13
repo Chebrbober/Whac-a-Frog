@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Whac-a-Mole"
-run/main_scene="uid://33x455vlkd34"
+config/name="Whac-a-Frog"
+run/main_scene="uid://vqh5mw41w124"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [display]
