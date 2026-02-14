@@ -6,13 +6,13 @@
 [ext_resource type="FontFile" uid="uid://dwrs68ec4iqx0" path="res://assets/Kenney Pixel.ttf" id="4_8atfi"]
 [ext_resource type="PackedScene" uid="uid://boq4y64gxn0so" path="res://scenes/fade_transition.tscn" id="5_vxfw4"]
 [ext_resource type="Texture2D" uid="uid://e406unnksb1o" path="res://assets/desk.png" id="6_y0kep"]
+[ext_resource type="PackedScene" uid="uid://coyrfdqgk8dgd" path="res://scenes/pause_menu.tscn" id="7_y0kep"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vxfw4"]
 font = ExtResource("4_8atfi")
-font_size = 32
-font_color = Color(1, 0.9137255, 0, 1)
+font_size = 64
 outline_size = 4
-outline_color = Color(1, 0.19607843, 0.4745098, 1)
+outline_color = Color(0.016587036, 0.10727408, 0.28743866, 1)
 
 [node name="Desk" type="Node2D" unique_id=1781012608]
 script = ExtResource("1_em11a")
@@ -31,9 +31,15 @@ texture = ExtResource("3_sista")
 wait_time = 2.0
 autostart = true
 
+[node name="Desk" type="Sprite2D" parent="." unique_id=169905972]
+position = Vector2(192, 108)
+texture = ExtResource("6_y0kep")
+
 [node name="ScoreLabel" type="Label" parent="." unique_id=1891513739]
-offset_right = 37.0
-offset_bottom = 24.0
+offset_left = 108.0
+offset_top = 28.0
+offset_right = 276.0
+offset_bottom = 76.0
 size_flags_horizontal = 4
 text = "0"
 label_settings = SubResource("LabelSettings_vxfw4")
@@ -42,13 +48,18 @@ vertical_alignment = 1
 autowrap_mode = 1
 
 [node name="FadeTransition" parent="." unique_id=1765706661 instance=ExtResource("5_vxfw4")]
+visible = false
 z_index = 2
 offset_right = 384.0
 offset_bottom = 216.0
 mouse_filter = 1
 
-[node name="Desk" type="Sprite2D" parent="." unique_id=169905972]
-position = Vector2(192, 108)
-texture = ExtResource("6_y0kep")
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=58322719]
+process_mode = 3
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=1894300727 instance=ExtResource("7_y0kep")]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 100.0
+offset_bottom = 100.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
