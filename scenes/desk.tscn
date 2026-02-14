@@ -48,7 +48,6 @@ vertical_alignment = 1
 autowrap_mode = 1
 
 [node name="FadeTransition" parent="." unique_id=1765706661 instance=ExtResource("5_vxfw4")]
-visible = false
 z_index = 2
 offset_right = 384.0
 offset_bottom = 216.0

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://f1itd8cakf7j" path="res://scripts/pause_menu.gd" id="1_knqa7"]
 [ext_resource type="FontFile" uid="uid://dwrs68ec4iqx0" path="res://assets/Kenney Pixel.ttf" id="1_myx47"]
 [ext_resource type="Texture2D" uid="uid://e3verp7gjwvi" path="res://assets/resume_btn_normal.png" id="2_88e76"]
+[ext_resource type="Texture2D" uid="uid://c6ad87n460quq" path="res://assets/panel_texture.png" id="3_71k7c"]
 [ext_resource type="Texture2D" uid="uid://3tjw6n8xltiw" path="res://assets/resume_btn_pressed.png" id="3_knqa7"]
 [ext_resource type="Texture2D" uid="uid://dgfo01y0hprnh" path="res://assets/resume_btn_hover.png" id="4_71k7c"]
 [ext_resource type="Texture2D" uid="uid://bujumsht373ws" path="res://assets/home_btn_normal.png" id="5_cmnsq"]
@@ -13,12 +14,13 @@
 default_font = ExtResource("1_myx47")
 default_font_size = 16
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d2l8"]
-bg_color = Color(0.99116415, 0.99116427, 0.99116415, 1)
-border_width_bottom = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-anti_aliasing_size = 0.01
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ofnjo"]
+texture = ExtResource("3_71k7c")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+region_rect = Rect2(0, 0, 32, 35)
 
 [sub_resource type="LabelSettings" id="LabelSettings_4hnlu"]
 font = ExtResource("1_myx47")
@@ -109,7 +111,7 @@ offset_right = 267.0
 offset_bottom = 137.0
 accessibility_name = "Pause Menu"
 theme = SubResource("Theme_kukqi")
-theme_override_styles/panel = SubResource("StyleBoxFlat_5d2l8")
+theme_override_styles/panel = SubResource("StyleBoxTexture_ofnjo")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=444823146]
 layout_mode = 2
