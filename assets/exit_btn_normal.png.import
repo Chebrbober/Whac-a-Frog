@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8knp2ek3fogp"
-path="res://.godot/imported/hurted_frog.png-33e1d3a0a9844dc79f9904be4e4393bd.ctex"
+uid="uid://cjxqqule847ry"
+path="res://.godot/imported/exit_btn_normal.png-66cff8d68c04e3c1f967fdb2d3123b10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/hurted_frog.png"
-dest_files=["res://.godot/imported/hurted_frog.png-33e1d3a0a9844dc79f9904be4e4393bd.ctex"]
+source_file="res://assets/exit_btn_normal.png"
+dest_files=["res://.godot/imported/exit_btn_normal.png-66cff8d68c04e3c1f967fdb2d3123b10.ctex"]
 
 [params]
 

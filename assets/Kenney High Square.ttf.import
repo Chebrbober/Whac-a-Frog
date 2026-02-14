@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://c8mq6pxuevviu"
-path="res://.godot/imported/Kenney High Square.ttf-0cfdecf905d3ed3d9cd5b8f15cfbd4cc.fontdata"
+path="res://.godot/imported/Kenney High Square.ttf-ef6411c86e2b140ee1a5363d1f21d300.fontdata"
 
 [deps]
 
-source_file="res://resources/Kenney High Square.ttf"
-dest_files=["res://.godot/imported/Kenney High Square.ttf-0cfdecf905d3ed3d9cd5b8f15cfbd4cc.fontdata"]
+source_file="res://assets/Kenney High Square.ttf"
+dest_files=["res://.godot/imported/Kenney High Square.ttf-ef6411c86e2b140ee1a5363d1f21d300.fontdata"]
 
 [params]
 

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://hqa8er46k7ib"
-path="res://.godot/imported/Kenney Mini Square Mono.ttf-3126f3a15f303a496a7e42605d834d08.fontdata"
+uid="uid://bkjwtu36yfa6e"
+path="res://.godot/imported/Kenney Blocks.ttf-7533467b49a8e2d9c3a6e6227bce874c.fontdata"
 
 [deps]
 
-source_file="res://resources/Kenney Mini Square Mono.ttf"
-dest_files=["res://.godot/imported/Kenney Mini Square Mono.ttf-3126f3a15f303a496a7e42605d834d08.fontdata"]
+source_file="res://assets/Kenney Blocks.ttf"
+dest_files=["res://.godot/imported/Kenney Blocks.ttf-7533467b49a8e2d9c3a6e6227bce874c.fontdata"]
 
 [params]
 

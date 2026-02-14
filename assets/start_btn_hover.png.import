@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byd0gfaagkgmc"
-path="res://.godot/imported/normal_frog.png-fc95c5d357766560d002637cc2c321a2.ctex"
+uid="uid://fhrp3u5hbx73"
+path="res://.godot/imported/start_btn_hover.png-f1f7789136886e443c4fc8ee6103e438.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/normal_frog.png"
-dest_files=["res://.godot/imported/normal_frog.png-fc95c5d357766560d002637cc2c321a2.ctex"]
+source_file="res://assets/start_btn_hover.png"
+dest_files=["res://.godot/imported/start_btn_hover.png-f1f7789136886e443c4fc8ee6103e438.ctex"]
 
 [params]
 

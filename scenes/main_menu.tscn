@@ -1,12 +1,18 @@
 [gd_scene format=3 uid="uid://vqh5mw41w124"]
 
 [ext_resource type="Script" uid="uid://oj8a3bh1tf2c" path="res://scripts/main_menu.gd" id="1_ekxnf"]
-[ext_resource type="FontFile" uid="uid://dwrs68ec4iqx0" path="res://resources/Kenney Pixel.ttf" id="2_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://boq4y64gxn0so" path="res://scenes/fade_transition.tscn" id="2_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://dxtxrv7t2gl6j" path="res://resources/parallax_bg.png" id="2_wu84c"]
+[ext_resource type="Texture2D" uid="uid://dxtxrv7t2gl6j" path="res://assets/parallax_bg.png" id="2_oa1go"]
+[ext_resource type="FontFile" uid="uid://dwrs68ec4iqx0" path="res://assets/Kenney Pixel.ttf" id="3_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://clnjcmvo40053" path="res://assets/start_btn_normal.png" id="4_oa1go"]
+[ext_resource type="Texture2D" uid="uid://dfnc0wrvgb7j8" path="res://assets/start_btn_pressed.png" id="5_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://fhrp3u5hbx73" path="res://assets/start_btn_hover.png" id="6_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://cjxqqule847ry" path="res://assets/exit_btn_normal.png" id="7_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://bfwhm77cbi61x" path="res://assets/exit_btn_pressed.png" id="8_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://cagyuhotob75c" path="res://assets/exit_btn_hover.png" id="9_flqon"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
-font = ExtResource("2_bqqt6")
+font = ExtResource("3_tbmy8")
 font_size = 48
 font_color = Color(0.9999998, 0.2185705, 0.6459585, 1)
 outline_size = 8
@@ -16,13 +22,12 @@ outline_color = Color(1, 0.7529412, 0, 1)
 script = ExtResource("1_ekxnf")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1633532893]
-scroll_offset = Vector2(335, 26)
-repeat_size = Vector2(0, 1000)
+repeat_size = Vector2(1012, 1000)
 autoscroll = Vector2(4, 4)
 
 [node name="Background" type="Sprite2D" parent="Parallax2D" unique_id=1623011452]
 scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("2_wu84c")
+texture = ExtResource("2_oa1go")
 
 [node name="Control" type="Control" parent="." unique_id=60007438]
 layout_mode = 3
@@ -44,20 +49,21 @@ label_settings = SubResource("LabelSettings_wu84c")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Play" type="Button" parent="Control/VBoxContainer" unique_id=1092216969]
-custom_minimum_size = Vector2(80, 20)
+[node name="Play" type="TextureButton" parent="Control/VBoxContainer" unique_id=1399534597]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "PLAY
-"
+texture_normal = ExtResource("4_oa1go")
+texture_pressed = ExtResource("5_tbmy8")
+texture_hover = ExtResource("6_jk1qb")
 
-[node name="Quit" type="Button" parent="Control/VBoxContainer" unique_id=1062946083]
-custom_minimum_size = Vector2(80, 20)
+[node name="Quit" type="TextureButton" parent="Control/VBoxContainer" unique_id=1300125535]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "QUIT"
+texture_normal = ExtResource("7_5dd4i")
+texture_pressed = ExtResource("8_lgwnu")
+texture_hover = ExtResource("9_flqon")
 
 [node name="FadeTransition" parent="." unique_id=1765706661 instance=ExtResource("2_ekxnf")]
 visible = false

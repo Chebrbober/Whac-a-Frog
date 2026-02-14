@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dwrs68ec4iqx0"
-path="res://.godot/imported/Kenney Pixel.ttf-0d8288581029ddb4bc0bcd70cc53466d.fontdata"
+uid="uid://cp38w1s61vfqq"
+path="res://.godot/imported/Kenney High.ttf-a87bc3dad763dd924437429be9608444.fontdata"
 
 [deps]
 
-source_file="res://resources/Kenney Pixel.ttf"
-dest_files=["res://.godot/imported/Kenney Pixel.ttf-0d8288581029ddb4bc0bcd70cc53466d.fontdata"]
+source_file="res://assets/Kenney High.ttf"
+dest_files=["res://.godot/imported/Kenney High.ttf-a87bc3dad763dd924437429be9608444.fontdata"]
 
 [params]
 
