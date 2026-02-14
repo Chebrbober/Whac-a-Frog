@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://vqh5mw41w124"]
 
 [ext_resource type="Script" uid="uid://oj8a3bh1tf2c" path="res://scripts/main_menu.gd" id="1_ekxnf"]
-[ext_resource type="PackedScene" uid="uid://boq4y64gxn0so" path="res://scenes/fade_transition.tscn" id="2_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://dxtxrv7t2gl6j" path="res://assets/parallax_bg.png" id="2_oa1go"]
 [ext_resource type="FontFile" uid="uid://cp38w1s61vfqq" path="res://assets/Kenney High.ttf" id="3_5dd4i"]
 [ext_resource type="Texture2D" uid="uid://clnjcmvo40053" path="res://assets/start_btn_normal.png" id="4_oa1go"]
@@ -64,13 +63,5 @@ texture_normal = ExtResource("7_5dd4i")
 texture_pressed = ExtResource("8_lgwnu")
 texture_hover = ExtResource("9_flqon")
 
-[node name="FadeTransition" parent="." unique_id=1765706661 instance=ExtResource("2_ekxnf")]
-visible = false
-offset_right = 384.0
-offset_bottom = 216.0
-
-[node name="Timer" type="Timer" parent="FadeTransition" unique_id=732914540]
-
 [connection signal="pressed" from="Control/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="timeout" from="FadeTransition/Timer" to="." method="_on_timer_timeout"]

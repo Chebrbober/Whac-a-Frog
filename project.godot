@@ -14,6 +14,10 @@ config/name="Whac-a-Frog"
 run/main_scene="uid://vqh5mw41w124"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+FadeTransition="*uid://boq4y64gxn0so"
+
 [display]
 
 window/size/viewport_width=384

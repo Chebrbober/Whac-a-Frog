@@ -1,18 +1,20 @@
 [gd_scene format=3 uid="uid://boq4y64gxn0so"]
 
+[ext_resource type="Script" uid="uid://0327fk8jvebn" path="res://scripts/fade_transition.gd" id="1_6uw4y"]
+
 [sub_resource type="Animation" id="Animation_x8c23"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
+tracks/0/path = NodePath("ColorRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_6uw4y"]
@@ -21,46 +23,36 @@ length = 0.35
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
+tracks/0/path = NodePath("ColorRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.35),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_3nli8"]
-resource_name = "fade_oujt"
-length = 0.35
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.35),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vxaoj"]
 _data = {
 &"RESET": SubResource("Animation_x8c23"),
-&"fade_in": SubResource("Animation_6uw4y"),
-&"fade_out": SubResource("Animation_3nli8")
+&"fade": SubResource("Animation_6uw4y")
 }
 
-[node name="FadeTransition" type="ColorRect" unique_id=1765706661]
+[node name="FadeTransition" type="CanvasLayer" unique_id=1961911341]
+layer = 5
+script = ExtResource("1_6uw4y")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=223648944]
+libraries/ = SubResource("AnimationLibrary_vxaoj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1961975628]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
+mouse_behavior_recursive = 1
 color = Color(0, 0, 0, 1)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=223648944]
-libraries/ = SubResource("AnimationLibrary_vxaoj")

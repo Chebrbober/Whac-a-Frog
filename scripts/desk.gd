@@ -9,7 +9,7 @@ var frog_array: Array = []
 var score: int = 0
 
 func _ready() -> void:
-	$FadeTransition/AnimationPlayer.play("fade_out")
+	FadeTransition.anim_player.play_backwards("fade")
 	if timer == null:
 		return
 	
