@@ -9,21 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://cjxqqule847ry" path="res://assets/exit_btn_normal.png" id="7_5dd4i"]
 [ext_resource type="Texture2D" uid="uid://bfwhm77cbi61x" path="res://assets/exit_btn_pressed.png" id="8_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://cagyuhotob75c" path="res://assets/exit_btn_hover.png" id="9_flqon"]
-[ext_resource type="Texture2D" uid="uid://c6ad87n460quq" path="res://assets/panel_texture.png" id="10_5dd4i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
 font = ExtResource("3_5dd4i")
 font_size = 32
 outline_size = 5
 outline_color = Color(0.11372549, 0.07450981, 0.20784314, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lgwnu"]
-texture = ExtResource("10_5dd4i")
-texture_margin_left = 14.0
-texture_margin_top = 14.0
-texture_margin_right = 14.0
-texture_margin_bottom = 14.0
-region_rect = Rect2(0, 0, 32, 35)
 
 [node name="MainMenu" type="Node2D" unique_id=556194598]
 script = ExtResource("1_ekxnf")
@@ -68,25 +59,6 @@ size_flags_vertical = 4
 texture_normal = ExtResource("7_5dd4i")
 texture_pressed = ExtResource("8_lgwnu")
 texture_hover = ExtResource("9_flqon")
-
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1735125176]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 121.0
-offset_top = 58.0
-offset_right = 263.0
-offset_bottom = 157.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_styles/panel = SubResource("StyleBoxTexture_lgwnu")
-
-[node name="TextureButton" type="TextureButton" parent="PanelContainer" unique_id=347513840]
-layout_mode = 2
 
 [connection signal="pressed" from="Control/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

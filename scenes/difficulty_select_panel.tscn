@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c1ksiui82njv7"]
+
+[ext_resource type="PackedScene" uid="uid://qfs4jn26m7or" path="res://scenes/base_panel.tscn" id="1_a0dry"]
+[ext_resource type="Texture2D" uid="uid://cfctwnsu3tu4f" path="res://assets/easy_btn_normal.png" id="2_yhvr7"]
+[ext_resource type="Texture2D" uid="uid://kq5gph8a2i8v" path="res://assets/easy_btn_pressed.png" id="3_y7spd"]
+[ext_resource type="Texture2D" uid="uid://c7lw4wc2vyc1l" path="res://assets/easy_btn_hover.png" id="4_kpkje"]
+[ext_resource type="Texture2D" uid="uid://xyhfvampb25y" path="res://assets/medium_btn_normal.png" id="5_80a5n"]
+[ext_resource type="Texture2D" uid="uid://8hysv5pm6n37" path="res://assets/medium_btn_pressed.png" id="6_d4qif"]
+[ext_resource type="Texture2D" uid="uid://cpdrf0r3bie3r" path="res://assets/medium_btn_hover.png" id="7_03eko"]
+[ext_resource type="Texture2D" uid="uid://dy6aitsarvvdp" path="res://assets/hard_btn_normal.png" id="8_8lhpn"]
+[ext_resource type="Texture2D" uid="uid://c6k8ji5dhteiv" path="res://assets/hard_btn_pressed.png" id="9_pabwu"]
+[ext_resource type="Texture2D" uid="uid://cfloadopu2t3t" path="res://assets/hard_btn_hover.png" id="10_swkwf"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8lhpn"]
+color = Color(1, 0.8627451, 0.84313726, 0)
+
+[node name="DifficultySelectPanel" unique_id=1619400180 instance=ExtResource("1_a0dry")]
+
+[node name="PanelContainer" parent="." index="1" unique_id=536803732]
+offset_top = -61.75
+offset_bottom = 61.75
+
+[node name="VBoxContainer" parent="PanelContainer" index="0" unique_id=486121291]
+theme_override_constants/separation = 5
+
+[node name="NameLabel" parent="PanelContainer/VBoxContainer" index="0" unique_id=719207855]
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.89
+text = "Select Difficulty"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer" index="1" unique_id=650181425]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_8lhpn")
+
+[node name="Easy" type="TextureButton" parent="PanelContainer/VBoxContainer" index="2" unique_id=1233223510]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_yhvr7")
+texture_pressed = ExtResource("3_y7spd")
+texture_hover = ExtResource("4_kpkje")
+
+[node name="Medium" type="TextureButton" parent="PanelContainer/VBoxContainer" index="3" unique_id=1992844380]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_80a5n")
+texture_pressed = ExtResource("6_d4qif")
+texture_hover = ExtResource("7_03eko")
+
+[node name="Hard" type="TextureButton" parent="PanelContainer/VBoxContainer" index="4" unique_id=952394727]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("8_8lhpn")
+texture_pressed = ExtResource("9_pabwu")
+texture_hover = ExtResource("10_swkwf")

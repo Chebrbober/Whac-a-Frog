@@ -18,3 +18,11 @@ func _on_home_pressed() -> void:
 
 func _on_resume_pressed() -> void:
 	resume()	
+
+func handle_escape():
+	if Input.is_action_just_released("Escape"):
+		if not is_visible_in_tree():
+			open()
+		else:
+			resume()
+		

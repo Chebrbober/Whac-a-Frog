@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://6733ny1gkrfd" path="res://assets/home_btn_pressed.png" id="7_a0rnc"]
 [ext_resource type="Texture2D" uid="uid://lb6fcb2wv65x" path="res://assets/home_btn_hover.png" id="8_4cnuc"]
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_imhx2"]
+color = Color(0, 0, 0, 0)
+
 [node name="PausePanel" unique_id=1619400180 instance=ExtResource("1_imhx2")]
 process_mode = 3
 script = ExtResource("2_ndesk")
@@ -18,9 +21,14 @@ offset_top = -34.75
 offset_bottom = 34.75
 
 [node name="NameLabel" parent="PanelContainer/VBoxContainer" parent_id_path=PackedInt32Array(486121291) index="0" unique_id=719207855]
+text = "Pause"
 vertical_alignment = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" parent_id_path=PackedInt32Array(486121291) index="1" unique_id=225172632]
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer" parent_id_path=PackedInt32Array(486121291) index="1" unique_id=538865335]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_imhx2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" parent_id_path=PackedInt32Array(486121291) index="2" unique_id=225172632]
 layout_mode = 2
 alignment = 1
 

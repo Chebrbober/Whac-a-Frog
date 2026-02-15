@@ -13,8 +13,10 @@ texture_margin_bottom = 14.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_52jco"]
 font = ExtResource("2_l6sgm")
-outline_size = 3
-outline_color = Color(0.13319641, 0.13319641, 0.13319638, 1)
+font_size = 24
+font_color = Color(0.2159017, 0.21590173, 0.21590167, 1)
+outline_size = 1
+outline_color = Color(0.427493, 0.42749307, 0.42749295, 1)
 
 [sub_resource type="Animation" id="Animation_v8n1c"]
 length = 0.001
