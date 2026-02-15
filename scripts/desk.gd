@@ -3,14 +3,13 @@ extends Node2D
 @export var frog_scene: PackedScene
 @onready var timer: Timer = $Timer
 @onready var score_label: Label = $ScoreLabel
-@onready var pause_menu: Control = $CanvasLayer/PauseMenu
+@onready var pause_panel: Control = $CanvasLayer/PausePanel
 
 var current_speed: float = 1.0
 var frog_array: Array = []
 var score: int = 0
 
 func _ready() -> void:
-	FadeTransition.anim_player.play_backwards("fade")
 	if timer == null:
 		return
 	
@@ -64,5 +63,5 @@ func _on_frog_hurted() -> void:
 
 
 func _on_texture_button_pressed() -> void:
-	pause_menu.pause()
+	pause_panel.open()
 	

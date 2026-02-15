@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://cftifgwaaxgmx" path="res://scenes/frog.tscn" id="2_em11a"]
 [ext_resource type="Texture2D" uid="uid://dxtxrv7t2gl6j" path="res://assets/parallax_bg.png" id="3_sista"]
 [ext_resource type="FontFile" uid="uid://dwrs68ec4iqx0" path="res://assets/Kenney Pixel.ttf" id="4_8atfi"]
+[ext_resource type="PackedScene" uid="uid://k6fg4qjehmyw" path="res://scenes/pause_panel.tscn" id="6_ngqn4"]
 [ext_resource type="Texture2D" uid="uid://e406unnksb1o" path="res://assets/desk.png" id="6_y0kep"]
 [ext_resource type="Texture2D" uid="uid://c6o3ud7q843iy" path="res://assets/pause_btn_normal.png" id="7_6cq47"]
-[ext_resource type="PackedScene" uid="uid://coyrfdqgk8dgd" path="res://scenes/pause_menu.tscn" id="7_y0kep"]
 [ext_resource type="Texture2D" uid="uid://cjovtrpmudsgl" path="res://assets/pause_btn_pressed.png" id="8_ngqn4"]
 [ext_resource type="Texture2D" uid="uid://weurb2vi2muw" path="res://assets/pause_btn_hover.png" id="9_63boh"]
 
@@ -47,11 +47,9 @@ autowrap_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=58322719]
 process_mode = 3
+layer = 5
 
-[node name="PauseMenu" parent="CanvasLayer" unique_id=1894300727 instance=ExtResource("7_y0kep")]
-custom_minimum_size = Vector2(50, 50)
-offset_right = 100.0
-offset_bottom = 100.0
+[node name="PausePanel" parent="CanvasLayer" unique_id=1619400180 instance=ExtResource("6_ngqn4")]
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1844207355]
 offset_left = 4.0

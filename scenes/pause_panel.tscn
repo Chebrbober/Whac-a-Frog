@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://k6fg4qjehmyw"]
+
+[ext_resource type="PackedScene" uid="uid://qfs4jn26m7or" path="res://scenes/base_panel.tscn" id="1_imhx2"]
+[ext_resource type="Script" uid="uid://cqo3lkcf72fws" path="res://scripts/pause_panel.gd" id="2_ndesk"]
+[ext_resource type="Texture2D" uid="uid://e3verp7gjwvi" path="res://assets/resume_btn_normal.png" id="3_43378"]
+[ext_resource type="Texture2D" uid="uid://3tjw6n8xltiw" path="res://assets/resume_btn_pressed.png" id="4_v4nyy"]
+[ext_resource type="Texture2D" uid="uid://dgfo01y0hprnh" path="res://assets/resume_btn_hover.png" id="5_5jc26"]
+[ext_resource type="Texture2D" uid="uid://bujumsht373ws" path="res://assets/home_btn_normal.png" id="6_r664t"]
+[ext_resource type="Texture2D" uid="uid://6733ny1gkrfd" path="res://assets/home_btn_pressed.png" id="7_a0rnc"]
+[ext_resource type="Texture2D" uid="uid://lb6fcb2wv65x" path="res://assets/home_btn_hover.png" id="8_4cnuc"]
+
+[node name="PausePanel" unique_id=1619400180 instance=ExtResource("1_imhx2")]
+process_mode = 3
+script = ExtResource("2_ndesk")
+
+[node name="PanelContainer" parent="." index="1" unique_id=536803732]
+offset_top = -34.75
+offset_bottom = 34.75
+
+[node name="NameLabel" parent="PanelContainer/VBoxContainer" parent_id_path=PackedInt32Array(486121291) index="0" unique_id=719207855]
+vertical_alignment = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" parent_id_path=PackedInt32Array(486121291) index="1" unique_id=225172632]
+layout_mode = 2
+alignment = 1
+
+[node name="Resume" type="TextureButton" parent="PanelContainer/VBoxContainer/HBoxContainer" index="0" unique_id=1446366861]
+layout_mode = 2
+texture_normal = ExtResource("3_43378")
+texture_pressed = ExtResource("4_v4nyy")
+texture_hover = ExtResource("5_5jc26")
+
+[node name="Home" type="TextureButton" parent="PanelContainer/VBoxContainer/HBoxContainer" index="1" unique_id=1768141353]
+layout_mode = 2
+texture_normal = ExtResource("6_r664t")
+texture_pressed = ExtResource("7_a0rnc")
+texture_hover = ExtResource("8_4cnuc")
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Home" to="." method="_on_home_pressed"]
