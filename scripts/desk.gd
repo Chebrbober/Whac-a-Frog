@@ -3,6 +3,7 @@ extends Node2D
 @export var frog_scene: PackedScene
 @onready var timer: Timer = $Timer
 @onready var score_label: Label = $ScoreLabel
+@onready var pause_menu: Control = $CanvasLayer/PauseMenu
 
 var current_speed: float = 1.0
 var frog_array: Array = []
@@ -60,3 +61,8 @@ func _on_frog_hurted() -> void:
 	score += 1
 	score_label.text = str(score)
 	print(score_label.text)
+
+
+func _on_texture_button_pressed() -> void:
+	pause_menu.pause()
+	

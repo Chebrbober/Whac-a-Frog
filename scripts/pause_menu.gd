@@ -3,15 +3,13 @@ extends Control
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
-	# Скрываем меню при старте и сбрасываем анимацию
 	hide()
-	process_mode = Node.PROCESS_MODE_ALWAYS # Убеждаемся, что код работает даже на паузе
+	process_mode = Node.PROCESS_MODE_ALWAYS 
 	anim_player.play("RESET")
 
 func resume():
 	get_tree().paused = false
 	anim_player.play_backwards("blur")
-	# Ждем окончания анимации перед тем как спрятать узел
 	await anim_player.animation_finished
 	hide()
 
@@ -31,7 +29,7 @@ func _process(_delta: float) -> void:
 	testEsc()
 
 func _on_home_pressed() -> void:
-	get_tree().paused = false # Обязательно снимаем паузу перед сменой сцены!
+	get_tree().paused = false
 	FadeTransition.travel_to_scene("res://scenes/main_menu.tscn")
 
 func _on_resume_pressed() -> void:

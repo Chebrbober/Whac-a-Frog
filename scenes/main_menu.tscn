@@ -19,12 +19,9 @@ outline_color = Color(0.11372549, 0.07450981, 0.20784314, 1)
 [node name="MainMenu" type="Node2D" unique_id=556194598]
 script = ExtResource("1_ekxnf")
 
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1633532893]
-repeat_size = Vector2(1012, 1000)
-autoscroll = Vector2(4, 4)
-
-[node name="Background" type="Sprite2D" parent="Parallax2D" unique_id=1623011452]
-scale = Vector2(0.99999994, 0.99999994)
+[node name="Background" type="Sprite2D" parent="." unique_id=1623011452]
+position = Vector2(191.5, 93)
+scale = Vector2(0.766, 0.5)
 texture = ExtResource("2_oa1go")
 
 [node name="Control" type="Control" parent="." unique_id=60007438]

@@ -4,9 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://cftifgwaaxgmx" path="res://scenes/frog.tscn" id="2_em11a"]
 [ext_resource type="Texture2D" uid="uid://dxtxrv7t2gl6j" path="res://assets/parallax_bg.png" id="3_sista"]
 [ext_resource type="FontFile" uid="uid://dwrs68ec4iqx0" path="res://assets/Kenney Pixel.ttf" id="4_8atfi"]
-[ext_resource type="PackedScene" uid="uid://boq4y64gxn0so" path="res://scenes/fade_transition.tscn" id="5_vxfw4"]
 [ext_resource type="Texture2D" uid="uid://e406unnksb1o" path="res://assets/desk.png" id="6_y0kep"]
+[ext_resource type="Texture2D" uid="uid://c6o3ud7q843iy" path="res://assets/pause_btn_normal.png" id="7_6cq47"]
 [ext_resource type="PackedScene" uid="uid://coyrfdqgk8dgd" path="res://scenes/pause_menu.tscn" id="7_y0kep"]
+[ext_resource type="Texture2D" uid="uid://cjovtrpmudsgl" path="res://assets/pause_btn_pressed.png" id="8_ngqn4"]
+[ext_resource type="Texture2D" uid="uid://weurb2vi2muw" path="res://assets/pause_btn_hover.png" id="9_63boh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vxfw4"]
 font = ExtResource("4_8atfi")
@@ -18,13 +20,9 @@ outline_color = Color(0.016587036, 0.10727408, 0.28743866, 1)
 script = ExtResource("1_em11a")
 frog_scene = ExtResource("2_em11a")
 
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=849634285]
-scroll_offset = Vector2(2163, 1471)
-repeat_size = Vector2(1012, 1000)
-autoscroll = Vector2(4, 4)
-
-[node name="Background" type="Sprite2D" parent="Parallax2D" unique_id=1876563324]
-scale = Vector2(0.99999994, 0.99999994)
+[node name="Background" type="Sprite2D" parent="." unique_id=1453181537]
+position = Vector2(191.5, 93)
+scale = Vector2(0.766, 0.5)
 texture = ExtResource("3_sista")
 
 [node name="Timer" type="Timer" parent="." unique_id=2004553772]
@@ -47,12 +45,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="FadeTransition" parent="." unique_id=1765706661 instance=ExtResource("5_vxfw4")]
-z_index = 2
-offset_right = 384.0
-offset_bottom = 216.0
-mouse_filter = 1
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=58322719]
 process_mode = 3
 
@@ -61,4 +53,15 @@ custom_minimum_size = Vector2(50, 50)
 offset_right = 100.0
 offset_bottom = 100.0
 
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1844207355]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 26.0
+offset_bottom = 26.0
+size_flags_horizontal = 8
+texture_normal = ExtResource("7_6cq47")
+texture_pressed = ExtResource("8_ngqn4")
+texture_hover = ExtResource("9_63boh")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
