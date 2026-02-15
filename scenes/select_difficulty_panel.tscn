@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://c1ksiui82njv7"]
+
+[ext_resource type="PackedScene" uid="uid://qfs4jn26m7or" path="res://scenes/base_panel.tscn" id="1_fxqo0"]
+[ext_resource type="Script" uid="uid://b2gex0csk8ai4" path="res://scripts/select_difficulty_panel.gd" id="2_yy7nn"]
+[ext_resource type="Texture2D" uid="uid://cfctwnsu3tu4f" path="res://assets/easy_btn_normal.png" id="3_208yv"]
+[ext_resource type="Texture2D" uid="uid://kq5gph8a2i8v" path="res://assets/easy_btn_pressed.png" id="4_yp3gc"]
+[ext_resource type="Texture2D" uid="uid://c7lw4wc2vyc1l" path="res://assets/easy_btn_hover.png" id="5_c3gq3"]
+[ext_resource type="Texture2D" uid="uid://xyhfvampb25y" path="res://assets/medium_btn_normal.png" id="6_jxxcb"]
+[ext_resource type="Texture2D" uid="uid://8hysv5pm6n37" path="res://assets/medium_btn_pressed.png" id="7_fhcyd"]
+[ext_resource type="Texture2D" uid="uid://cpdrf0r3bie3r" path="res://assets/medium_btn_hover.png" id="8_ili6u"]
+[ext_resource type="Texture2D" uid="uid://dy6aitsarvvdp" path="res://assets/hard_btn_normal.png" id="9_fcc7y"]
+[ext_resource type="Texture2D" uid="uid://c6k8ji5dhteiv" path="res://assets/hard_btn_pressed.png" id="10_3w2e8"]
+[ext_resource type="Texture2D" uid="uid://cfloadopu2t3t" path="res://assets/hard_btn_hover.png" id="11_53l1q"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8lhpn"]
+color = Color(1, 0.8627451, 0.84313726, 0)
+
+[node name="SelectDifficultyPanel" unique_id=1619400180 instance=ExtResource("1_fxqo0")]
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 4
+script = ExtResource("2_yy7nn")
+
+[node name="ColorRect" parent="." index="0" unique_id=734805450]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" parent="." index="1" unique_id=536803732]
+offset_top = -61.75
+offset_bottom = 61.75
+
+[node name="VBoxContainer" parent="PanelContainer" index="0" unique_id=486121291]
+theme_override_constants/separation = 5
+
+[node name="NameLabel" parent="PanelContainer/VBoxContainer" index="0" unique_id=719207855]
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.89
+text = "Select Difficulty"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer" index="1" unique_id=650181425]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_8lhpn")
+
+[node name="Easy" type="TextureButton" parent="PanelContainer/VBoxContainer" index="2" unique_id=1233223510]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_208yv")
+texture_pressed = ExtResource("4_yp3gc")
+texture_hover = ExtResource("5_c3gq3")
+
+[node name="Medium" type="TextureButton" parent="PanelContainer/VBoxContainer" index="3" unique_id=1992844380]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("6_jxxcb")
+texture_pressed = ExtResource("7_fhcyd")
+texture_hover = ExtResource("8_ili6u")
+
+[node name="Hard" type="TextureButton" parent="PanelContainer/VBoxContainer" index="4" unique_id=952394727]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("9_fcc7y")
+texture_pressed = ExtResource("10_3w2e8")
+texture_hover = ExtResource("11_53l1q")
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Medium" to="." method="_on_medium_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Hard" to="." method="_on_hard_pressed"]

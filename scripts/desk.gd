@@ -6,14 +6,21 @@ extends Node2D
 @onready var pause_panel: Control = $CanvasLayer/PausePanel
 
 var current_speed: float = 1.0
+var speed_step: float = 0.1
+var limit_wait_time: float = 1.1 
 var frog_array: Array = []
 var score: int = 0
 
 func _ready() -> void:
-	if timer == null:
-		return
+	if timer == null: return
+
+	var config = GameSettings.current_config
 	
-	timer.wait_time = 2.0
+	limit_wait_time = config["limit_wait_time"]
+	timer.wait_time = config["wait_time"]
+	current_speed = config["speed"]
+	speed_step = config["speed_step"]
+
 	timer.autostart = true
 	timer.start() 
 	
@@ -51,10 +58,10 @@ func _on_timer_timeout() -> void:
 	else:
 		print("Все лягушки заняты, ждем...")
 
-	if timer.wait_time > 0.4:
-		timer.wait_time -= 0.05
+	if timer.wait_time > limit_wait_time:
+		timer.wait_time -= speed_step
 		print("Новое время ожидания: ", timer.wait_time)
-		current_speed += 0.1
+		current_speed += speed_step 
 
 func _on_frog_hurted() -> void:
 	score += 1

@@ -1,15 +1,11 @@
 extends Node2D
 
-var button_type = null
+@onready var select_difficulty_panel: Control = $CanvasLayer/SelectDifficultyPanel
 
-func _ready() -> void:
-	pass
-
-func _process(delta: float) -> void:
-	pass
 
 func _on_play_pressed() -> void:
-	FadeTransition.travel_to_scene("res://scenes/desk.tscn")
+	select_difficulty_panel.open()
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+

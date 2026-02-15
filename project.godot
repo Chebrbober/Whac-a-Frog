@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 [autoload]
 
 FadeTransition="*uid://boq4y64gxn0so"
+GameSettings="*uid://ca4s2fj4f7475"
 
 [display]
 

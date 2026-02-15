@@ -80,6 +80,7 @@ _data = {
 }
 
 [node name="BasePanel" type="Control" unique_id=1619400180]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

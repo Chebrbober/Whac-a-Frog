@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cftifgwaaxgmx"]
 
-[ext_resource type="Texture2D" uid="uid://byd0gfaagkgmc" path="res://resources/normal_frog.png" id="1_mqod6"]
+[ext_resource type="Texture2D" uid="uid://byd0gfaagkgmc" path="res://assets/normal_frog.png" id="1_mqod6"]
 [ext_resource type="Script" uid="uid://be5irg6xjqaeq" path="res://scripts/frog.gd" id="1_rq8tc"]
-[ext_resource type="Texture2D" uid="uid://b8knp2ek3fogp" path="res://resources/hurted_frog.png" id="2_qyo2l"]
+[ext_resource type="Texture2D" uid="uid://b8knp2ek3fogp" path="res://assets/hurted_frog.png" id="2_qyo2l"]
 
 [sub_resource type="Animation" id="Animation_rq8tc"]
 resource_name = "RESET"
@@ -201,7 +201,7 @@ animation = &"hurted_out"
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_rq8tc"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_1g2vb"]
-graph_offset = Vector2(-244.68605, -91.869095)
+graph_offset = Vector2(48.3508, 257.24548)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_rq8tc")
 nodes/TimeScale/position = Vector2(112.200005, 110.00001)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_rq8tc")
@@ -461,7 +461,7 @@ libraries/ = SubResource("AnimationLibrary_rq8tc")
 reset_on_save = false
 tree_root = SubResource("AnimationNodeStateMachine_mokc4")
 anim_player = NodePath("../AnimationPlayer")
-parameters/HurtedOut/TimeScale/scale = 1.25
+parameters/HurtedOut/TimeScale/scale = 1.3999999999999986
 parameters/InOut/TimeScale/scale = 1.0
 parameters/None/TimeScale/scale = 1.0
 

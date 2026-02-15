@@ -24,3 +24,6 @@ func handle_escape():
 	if Input.is_action_just_pressed("Escape"):
 		if is_visible_in_tree():
 			close()
+
+func _process(delta: float) -> void:
+	handle_escape()
