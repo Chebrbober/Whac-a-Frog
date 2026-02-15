@@ -1,17 +1,30 @@
 extends Node2D
 
 @export var frog_scene: PackedScene
+@export var max_lives: int = 3 
+
 @onready var timer: Timer = $Timer
 @onready var score_label: Label = $ScoreLabel
 @onready var pause_panel: Control = $CanvasLayer/PausePanel
 
+@onready var heart1: TextureRect = $CanvasLayer/HBoxContainer/TextureRect
+@onready var heart2: TextureRect = $CanvasLayer/HBoxContainer/TextureRect2
+@onready var heart3: TextureRect = $CanvasLayer/HBoxContainer/TextureRect3
+
+var limit_wait_time: float = 1.1 
 var current_speed: float = 1.0
 var speed_step: float = 0.1
-var limit_wait_time: float = 1.1 
 var frog_array: Array = []
+var hearts: Array = []
 var score: int = 0
+var lives: int = 3
 
 func _ready() -> void:
+	hearts = [heart1, heart2, heart3]
+	lives = max_lives
+
+	update_hearts()
+
 	if timer == null: return
 
 	var config = GameSettings.current_config
@@ -39,6 +52,7 @@ func spawn_frogs():
 		for col in range(columns):
 			var new_frog = frog_scene.instantiate()
 			new_frog.frog_hurted.connect(_on_frog_hurted)
+			new_frog.frog_escaped.connect(_on_frog_escaped)
 			add_child(new_frog)
 			new_frog.position = start_pos + Vector2(col*spacing_x, row*spacing_y)
 			frog_array.append(new_frog)
@@ -68,6 +82,21 @@ func _on_frog_hurted() -> void:
 	score_label.text = str(score)
 	print(score_label.text)
 
+func _on_frog_escaped():
+	lives -=1
+	update_hearts()
+
+	if lives <= 0:
+		game_over()
+
+func update_hearts():
+	for i in range(hearts.size()):
+		if hearts[i] != null:
+			hearts[i].visible = i <lives
+
+func game_over():
+	print("You lost!")
+	FadeTransition.travel_to_scene("res://scenes/main_menu.tscn")
 
 func _on_texture_button_pressed() -> void:
 	pause_panel.open()

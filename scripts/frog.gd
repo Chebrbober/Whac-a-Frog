@@ -7,6 +7,7 @@ extends Node2D
 
 var is_leaving: bool = false
 signal frog_hurted
+signal frog_escaped
 
 func set_speed(value: float):
 	anim_tree.set("parameters/InOut/TimeScale/scale", value)
@@ -18,6 +19,9 @@ func play_hurted_out():
 	state_machine.travel("HurtedOut", true)
 	shake_once(0.4, 0.6)
 	frog_hurted.emit()
+
+func _on_in_out_finished() -> void:
+	frog_escaped.emit()
 
 func shake_once(duration: float, strength: float):
 	# Создаем локальный Tween (он удалится сам после завершения)

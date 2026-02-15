@@ -30,6 +30,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="Whac-a-Mole"
 
+[gui]
+
+common/snap_controls_to_pixels=false
+
 [input]
 
 Escape={

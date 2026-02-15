@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://k6fg4qjehmyw" path="res://scenes/pause_panel.tscn" id="6_ngqn4"]
 [ext_resource type="Texture2D" uid="uid://e406unnksb1o" path="res://assets/desk.png" id="6_y0kep"]
 [ext_resource type="Texture2D" uid="uid://c6o3ud7q843iy" path="res://assets/pause_btn_normal.png" id="7_6cq47"]
+[ext_resource type="Texture2D" uid="uid://bbppvjmcbcpxj" path="res://assets/heart.png" id="7_63boh"]
 [ext_resource type="Texture2D" uid="uid://cjovtrpmudsgl" path="res://assets/pause_btn_pressed.png" id="8_ngqn4"]
 [ext_resource type="Texture2D" uid="uid://weurb2vi2muw" path="res://assets/pause_btn_hover.png" id="9_63boh"]
 
@@ -16,13 +17,17 @@ font_size = 64
 outline_size = 4
 outline_color = Color(0.016587036, 0.10727408, 0.28743866, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dl07"]
+atlas = ExtResource("7_63boh")
+region = Rect2(0, 0, 13, 12)
+
 [node name="Desk" type="Node2D" unique_id=1781012608]
 script = ExtResource("1_em11a")
 frog_scene = ExtResource("2_em11a")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1453181537]
-position = Vector2(191.5, 93)
-scale = Vector2(0.766, 0.5)
+position = Vector2(192, 93)
+scale = Vector2(0.76799995, 0.5)
 texture = ExtResource("3_sista")
 
 [node name="Timer" type="Timer" parent="." unique_id=2004553772]
@@ -50,6 +55,32 @@ process_mode = 3
 layer = 5
 
 [node name="PausePanel" parent="CanvasLayer" unique_id=1619400180 instance=ExtResource("6_ngqn4")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=814546861]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -19.0
+offset_right = -53.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=54754983]
+layout_mode = 2
+texture = SubResource("AtlasTexture_5dl07")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=708413207]
+layout_mode = 2
+texture = SubResource("AtlasTexture_5dl07")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=439064638]
+layout_mode = 2
+texture = SubResource("AtlasTexture_5dl07")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1844207355]
 offset_left = 4.0
