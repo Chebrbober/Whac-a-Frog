@@ -58,13 +58,10 @@ size_flags_vertical = 4
 texture_normal = ExtResource("4_oa1go")
 texture_pressed = ExtResource("5_tbmy8")
 texture_hover = ExtResource("6_jk1qb")
+stretch_mode = 3
 
 [node name="ButtonEffectsModule" type="Node" parent="Control/VBoxContainer/Play" unique_id=311316763]
 script = ExtResource("7_lgwnu")
-ease_type = 2
-trans_type = 5
-anim_duration = 0.2
-scale_amount = Vector2(1.2, 1.2)
 metadata/_custom_type_script = "uid://cmw2ufiiekkh5"
 
 [node name="Quit" type="TextureButton" parent="Control/VBoxContainer" unique_id=1300125535]
@@ -74,13 +71,10 @@ size_flags_vertical = 4
 texture_normal = ExtResource("7_5dd4i")
 texture_pressed = ExtResource("8_lgwnu")
 texture_hover = ExtResource("9_flqon")
+stretch_mode = 3
 
 [node name="ButtonEffectsModule" type="Node" parent="Control/VBoxContainer/Quit" unique_id=1030987181]
 script = ExtResource("7_lgwnu")
-ease_type = 1
-trans_type = 5
-anim_duration = 0.2
-scale_amount = Vector2(1.2, 1.2)
 metadata/_custom_type_script = "uid://cmw2ufiiekkh5"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=517218939]

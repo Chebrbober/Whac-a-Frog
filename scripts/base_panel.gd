@@ -9,10 +9,16 @@ func _ready() -> void:
 	hide()
 	if anim_player:
 		anim_player.play("RESET")
-	close_btn.set_position(Vector2.ZERO)
-	close_btn.position = Vector2(panel_container.position.x + panel_container.size.x - (close_btn.size.x / 2), panel_container.position.y - (close_btn.size.y / 2))
+	setup_close_button()
 	print(close_btn.position)
 	
+func setup_close_button():
+	var panel_size = panel_container.size 
+
+	var target_x = panel_container.position.x + panel_container.size.x - (close_btn.size.x / 2)
+	var target_y = panel_container.position.y - (close_btn.size.y / 2) 
+
+	close_btn.position = Vector2(target_x, target_y)
 
 func open():
 	show()

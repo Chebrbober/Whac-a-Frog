@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://clsdockgjqo3i" path="res://scripts/base_panel.gd" id="1_52jco"]
 [ext_resource type="Texture2D" uid="uid://c6ad87n460quq" path="res://assets/panel_texture.png" id="1_kd7d1"]
 [ext_resource type="FontFile" uid="uid://dwrs68ec4iqx0" path="res://assets/Kenney Pixel.ttf" id="2_l6sgm"]
-[ext_resource type="Texture2D" uid="uid://b6ooxbxociifn" path="res://assets/x_btns.png" id="3_v8n1c"]
+[ext_resource type="Texture2D" uid="uid://b6ooxbxociifn" path="res://assets/close_btns.png" id="3_v8n1c"]
 [ext_resource type="Script" uid="uid://cmw2ufiiekkh5" path="res://scripts/button_effects_module.gd" id="4_jckd5"]
 
 [sub_resource type="Animation" id="Animation_v8n1c"]
@@ -20,6 +20,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_jckd5"]
 resource_name = "blur"
@@ -31,6 +43,18 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -91,11 +115,18 @@ libraries/ = SubResource("AnimationLibrary_qd3yk")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=734805450]
 modulate = Color(1, 1, 1, 0.3137255)
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -192.0
 offset_top = -108.0
 offset_right = 192.0
 offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Control" type="Control" parent="." unique_id=1233196056]
@@ -113,13 +144,10 @@ shortcut_in_tooltip = false
 texture_normal = SubResource("AtlasTexture_jckd5")
 texture_pressed = SubResource("AtlasTexture_qd3yk")
 texture_hover = SubResource("AtlasTexture_2d0fr")
+stretch_mode = 3
 
 [node name="ButtonEffectsModule" type="Node" parent="Control/Close" unique_id=593946844]
 script = ExtResource("4_jckd5")
-ease_type = 2
-trans_type = 5
-anim_duration = 0.2
-scale_amount = Vector2(1.2, 1.2)
 metadata/_custom_type_script = "uid://cmw2ufiiekkh5"
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=536803732]

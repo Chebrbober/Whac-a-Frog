@@ -54,9 +54,6 @@ autowrap_mode = 1
 process_mode = 3
 layer = 5
 
-[node name="PausePanel" parent="CanvasLayer" unique_id=1619400180 instance=ExtResource("6_ngqn4")]
-visible = false
-
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=814546861]
 anchors_preset = 7
 anchor_left = 0.5
@@ -82,6 +79,9 @@ texture = SubResource("AtlasTexture_5dl07")
 [node name="TextureRect3" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=439064638]
 layout_mode = 2
 texture = SubResource("AtlasTexture_5dl07")
+
+[node name="PausePanel" parent="CanvasLayer" unique_id=1619400180 instance=ExtResource("6_ngqn4")]
+visible = false
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1844207355]
 offset_left = 4.0

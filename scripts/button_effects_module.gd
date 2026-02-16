@@ -1,9 +1,9 @@
 extends Node
 class_name ButtonEffectsModule
 
-@export var ease_type: Tween.EaseType
-@export var trans_type: Tween.TransitionType
-@export var anim_duration: float = 0.05
+@export var ease_type: Tween.EaseType = Tween.EaseType.EASE_OUT
+@export var trans_type: Tween.TransitionType = Tween.TransitionType.TRANS_EXPO
+@export var anim_duration: float = 0.2
 @export var scale_amount: Vector2 = Vector2(1.1,1.1)
 
 @onready var button: TextureButton = get_parent()
