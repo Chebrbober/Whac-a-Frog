@@ -55,6 +55,7 @@ process_mode = 3
 layer = 5
 
 [node name="PausePanel" parent="CanvasLayer" unique_id=1619400180 instance=ExtResource("6_ngqn4")]
+visible = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=814546861]
 anchors_preset = 7

@@ -36,8 +36,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" parent="." index="1" unique_id=536803732]
-offset_top = -61.75
-offset_bottom = 61.75
+offset_left = -89.0
+offset_top = -78.25
+offset_right = 89.0
+offset_bottom = 78.25
 
 [node name="VBoxContainer" parent="PanelContainer" index="0" unique_id=486121291]
 theme_override_constants/separation = 5

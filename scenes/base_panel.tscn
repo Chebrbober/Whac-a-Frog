@@ -3,71 +3,35 @@
 [ext_resource type="Script" uid="uid://clsdockgjqo3i" path="res://scripts/base_panel.gd" id="1_52jco"]
 [ext_resource type="Texture2D" uid="uid://c6ad87n460quq" path="res://assets/panel_texture.png" id="1_kd7d1"]
 [ext_resource type="FontFile" uid="uid://dwrs68ec4iqx0" path="res://assets/Kenney Pixel.ttf" id="2_l6sgm"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6sgm"]
-texture = ExtResource("1_kd7d1")
-texture_margin_left = 14.0
-texture_margin_top = 14.0
-texture_margin_right = 14.0
-texture_margin_bottom = 14.0
-
-[sub_resource type="LabelSettings" id="LabelSettings_52jco"]
-font = ExtResource("2_l6sgm")
-font_size = 24
-font_color = Color(0.2159017, 0.21590173, 0.21590167, 1)
-outline_size = 1
-outline_color = Color(0.427493, 0.42749307, 0.42749295, 1)
+[ext_resource type="Texture2D" uid="uid://b6ooxbxociifn" path="res://assets/x_btns.png" id="3_v8n1c"]
+[ext_resource type="Script" uid="uid://cmw2ufiiekkh5" path="res://scripts/button_effects_module.gd" id="4_jckd5"]
 
 [sub_resource type="Animation" id="Animation_v8n1c"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PanelContainer:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_jckd5"]
 resource_name = "blur"
-length = 0.3
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.3137255)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PanelContainer:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -79,8 +43,38 @@ _data = {
 &"blur": SubResource("Animation_jckd5")
 }
 
+[sub_resource type="InputEventKey" id="InputEventKey_jckd5"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_qd3yk"]
+events = [SubResource("InputEventKey_jckd5")]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jckd5"]
+atlas = ExtResource("3_v8n1c")
+region = Rect2(2, 2, 22, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd3yk"]
+atlas = ExtResource("3_v8n1c")
+region = Rect2(47, 2, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d0fr"]
+atlas = ExtResource("3_v8n1c")
+region = Rect2(24, 2, 24, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6sgm"]
+texture = ExtResource("1_kd7d1")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_52jco"]
+font = ExtResource("2_l6sgm")
+font_size = 24
+outline_size = 1
+
 [node name="BasePanel" type="Control" unique_id=1619400180]
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -92,8 +86,11 @@ grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_52jco")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=674642717]
+libraries/ = SubResource("AnimationLibrary_qd3yk")
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=734805450]
-modulate = Color(1, 1, 1, 0)
+modulate = Color(1, 1, 1, 0.3137255)
 layout_mode = 0
 offset_left = -192.0
 offset_top = -108.0
@@ -101,8 +98,31 @@ offset_right = 192.0
 offset_bottom = 108.0
 color = Color(0, 0, 0, 1)
 
+[node name="Control" type="Control" parent="." unique_id=1233196056]
+top_level = true
+anchors_preset = 0
+
+[node name="Close" type="TextureButton" parent="Control" unique_id=1340721160]
+layout_mode = 0
+offset_right = 22.0
+offset_bottom = 24.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+shortcut = SubResource("Shortcut_qd3yk")
+shortcut_in_tooltip = false
+texture_normal = SubResource("AtlasTexture_jckd5")
+texture_pressed = SubResource("AtlasTexture_qd3yk")
+texture_hover = SubResource("AtlasTexture_2d0fr")
+
+[node name="ButtonEffectsModule" type="Node" parent="Control/Close" unique_id=593946844]
+script = ExtResource("4_jckd5")
+ease_type = 2
+trans_type = 5
+anim_duration = 0.2
+scale_amount = Vector2(1.2, 1.2)
+metadata/_custom_type_script = "uid://cmw2ufiiekkh5"
+
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=536803732]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -126,6 +146,3 @@ text = "Panel Name"
 label_settings = SubResource("LabelSettings_52jco")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=674642717]
-libraries/ = SubResource("AnimationLibrary_qd3yk")

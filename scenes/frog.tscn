@@ -215,7 +215,7 @@ animation = &"hurted_out"
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_rq8tc"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_1g2vb"]
-graph_offset = Vector2(48.3508, 257.24548)
+graph_offset = Vector2(103.244965, 327.36542)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_rq8tc")
 nodes/TimeScale/position = Vector2(112.200005, 110.00001)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_rq8tc")
@@ -475,7 +475,7 @@ libraries/ = SubResource("AnimationLibrary_rq8tc")
 reset_on_save = false
 tree_root = SubResource("AnimationNodeStateMachine_mokc4")
 anim_player = NodePath("../AnimationPlayer")
-parameters/HurtedOut/TimeScale/scale = 1.3999999999999986
+parameters/HurtedOut/TimeScale/scale = 1.5
 parameters/InOut/TimeScale/scale = 1.0
 parameters/None/TimeScale/scale = 1.0
 

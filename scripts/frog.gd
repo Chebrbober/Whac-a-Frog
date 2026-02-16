@@ -24,11 +24,9 @@ func _on_in_out_finished() -> void:
 	frog_escaped.emit()
 
 func shake_once(duration: float, strength: float):
-	# Создаем локальный Tween (он удалится сам после завершения)
 	var tween = create_tween()
 	var start_pos = position
 	
-	# Делаем 4 быстрых рывка в случайные стороны
 	for i in range(4):
 		var offset = Vector2(randf_range(-strength, strength), randf_range(-strength, strength))
 		tween.tween_property(self, "position", start_pos + offset, duration / 8.0)
