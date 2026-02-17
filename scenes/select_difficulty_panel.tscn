@@ -2,19 +2,49 @@
 
 [ext_resource type="PackedScene" uid="uid://qfs4jn26m7or" path="res://scenes/base_panel.tscn" id="1_fxqo0"]
 [ext_resource type="Script" uid="uid://b2gex0csk8ai4" path="res://scripts/select_difficulty_panel.gd" id="2_yy7nn"]
-[ext_resource type="Texture2D" uid="uid://cfctwnsu3tu4f" path="res://assets/easy_btn_normal.png" id="3_208yv"]
-[ext_resource type="Texture2D" uid="uid://kq5gph8a2i8v" path="res://assets/easy_btn_pressed.png" id="4_yp3gc"]
-[ext_resource type="Texture2D" uid="uid://c7lw4wc2vyc1l" path="res://assets/easy_btn_hover.png" id="5_c3gq3"]
-[ext_resource type="Texture2D" uid="uid://xyhfvampb25y" path="res://assets/medium_btn_normal.png" id="6_jxxcb"]
-[ext_resource type="Script" uid="uid://cmw2ufiiekkh5" path="res://scripts/button_effects_module.gd" id="6_yy7nn"]
-[ext_resource type="Texture2D" uid="uid://8hysv5pm6n37" path="res://assets/medium_btn_pressed.png" id="7_fhcyd"]
-[ext_resource type="Texture2D" uid="uid://cpdrf0r3bie3r" path="res://assets/medium_btn_hover.png" id="8_ili6u"]
-[ext_resource type="Texture2D" uid="uid://dy6aitsarvvdp" path="res://assets/hard_btn_normal.png" id="9_fcc7y"]
-[ext_resource type="Texture2D" uid="uid://c6k8ji5dhteiv" path="res://assets/hard_btn_pressed.png" id="10_3w2e8"]
-[ext_resource type="Texture2D" uid="uid://cfloadopu2t3t" path="res://assets/hard_btn_hover.png" id="11_53l1q"]
+[ext_resource type="Texture2D" uid="uid://cfeo4w3wjp50c" path="res://assets/easy_btns.png" id="3_tswh5"]
+[ext_resource type="Script" uid="uid://dpvketnnas4bp" path="res://scripts/animated_button.gd" id="4_oxrni"]
+[ext_resource type="Texture2D" uid="uid://b6sl016bmqk07" path="res://assets/medium_btns.png" id="5_oxrni"]
+[ext_resource type="Texture2D" uid="uid://bjru0vfxijabb" path="res://assets/hard_btns.png" id="8_u5yhy"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_8lhpn"]
 color = Color(1, 0.8627451, 0.84313726, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5b2m"]
+atlas = ExtResource("3_tswh5")
+region = Rect2(4, 1, 57, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxqo0"]
+atlas = ExtResource("3_tswh5")
+region = Rect2(131, 2, 59, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yy7nn"]
+atlas = ExtResource("3_tswh5")
+region = Rect2(67, 1, 59, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72hnm"]
+atlas = ExtResource("5_oxrni")
+region = Rect2(4, 1, 57, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tswh5"]
+atlas = ExtResource("5_oxrni")
+region = Rect2(131, 2, 59, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5yhy"]
+atlas = ExtResource("5_oxrni")
+region = Rect2(67, 1, 59, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_208yv"]
+atlas = ExtResource("8_u5yhy")
+region = Rect2(4, 1, 57, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yp3gc"]
+atlas = ExtResource("8_u5yhy")
+region = Rect2(131, 2, 59, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3gq3"]
+atlas = ExtResource("8_u5yhy")
+region = Rect2(67, 1, 59, 24)
 
 [node name="SelectDifficultyPanel" unique_id=1619400180 instance=ExtResource("1_fxqo0")]
 anchors_preset = 15
@@ -43,42 +73,36 @@ text = "Select Difficulty"
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_8lhpn")
 
-[node name="Easy" type="TextureButton" parent="PanelContainer/VBoxContainer" index="2" unique_id=1233223510]
+[node name="Easy" type="TextureButton" parent="PanelContainer/VBoxContainer" index="2" unique_id=1826311375]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("3_208yv")
-texture_pressed = ExtResource("4_yp3gc")
-texture_hover = ExtResource("5_c3gq3")
+texture_normal = SubResource("AtlasTexture_m5b2m")
+texture_pressed = SubResource("AtlasTexture_fxqo0")
+texture_hover = SubResource("AtlasTexture_yy7nn")
 stretch_mode = 3
+script = ExtResource("4_oxrni")
+metadata/_custom_type_script = "uid://dpvketnnas4bp"
 
-[node name="ButtonEffectsModule" type="Node" parent="PanelContainer/VBoxContainer/Easy" index="0" unique_id=944478305]
-script = ExtResource("6_yy7nn")
-metadata/_custom_type_script = "uid://cmw2ufiiekkh5"
-
-[node name="Medium" type="TextureButton" parent="PanelContainer/VBoxContainer" index="3" unique_id=1992844380]
+[node name="Medium" type="TextureButton" parent="PanelContainer/VBoxContainer" index="3" unique_id=1735533744]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("6_jxxcb")
-texture_pressed = ExtResource("7_fhcyd")
-texture_hover = ExtResource("8_ili6u")
+texture_normal = SubResource("AtlasTexture_72hnm")
+texture_pressed = SubResource("AtlasTexture_tswh5")
+texture_hover = SubResource("AtlasTexture_u5yhy")
 stretch_mode = 3
+script = ExtResource("4_oxrni")
+metadata/_custom_type_script = "uid://dpvketnnas4bp"
 
-[node name="ButtonEffectsModule" type="Node" parent="PanelContainer/VBoxContainer/Medium" index="0" unique_id=435156345]
-script = ExtResource("6_yy7nn")
-metadata/_custom_type_script = "uid://cmw2ufiiekkh5"
-
-[node name="Hard" type="TextureButton" parent="PanelContainer/VBoxContainer" index="4" unique_id=952394727]
+[node name="Hard" type="TextureButton" parent="PanelContainer/VBoxContainer" index="4" unique_id=1748975190]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("9_fcc7y")
-texture_pressed = ExtResource("10_3w2e8")
-texture_hover = ExtResource("11_53l1q")
+texture_normal = SubResource("AtlasTexture_208yv")
+texture_pressed = SubResource("AtlasTexture_yp3gc")
+texture_hover = SubResource("AtlasTexture_c3gq3")
 stretch_mode = 3
-
-[node name="ButtonEffectsModule" type="Node" parent="PanelContainer/VBoxContainer/Hard" index="0" unique_id=61624801]
-script = ExtResource("6_yy7nn")
-metadata/_custom_type_script = "uid://cmw2ufiiekkh5"
+script = ExtResource("4_oxrni")
+metadata/_custom_type_script = "uid://dpvketnnas4bp"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Medium" to="." method="_on_medium_pressed"]

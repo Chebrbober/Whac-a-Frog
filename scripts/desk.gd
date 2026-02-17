@@ -98,6 +98,5 @@ func game_over():
 	print("You lost!")
 	FadeTransition.travel_to_scene("res://scenes/main_menu.tscn")
 
-func _on_texture_button_pressed() -> void:
+func _on_pause_pressed() -> void:
 	pause_panel.open()
-	

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://vn5g2oymfery"]
+
+[ext_resource type="Script" uid="uid://dpvketnnas4bp" path="res://scripts/animated_button.gd" id="1_y1qn5"]
+
+[node name="AnimatedButton" type="TextureButton" unique_id=1550303269]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y1qn5")

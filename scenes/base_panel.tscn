@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://clsdockgjqo3i" path="res://scripts/base_panel.gd" id="1_52jco"]
 [ext_resource type="Texture2D" uid="uid://c6ad87n460quq" path="res://assets/panel_texture.png" id="1_kd7d1"]
 [ext_resource type="FontFile" uid="uid://dwrs68ec4iqx0" path="res://assets/Kenney Pixel.ttf" id="2_l6sgm"]
+[ext_resource type="Script" uid="uid://dpvketnnas4bp" path="res://scripts/animated_button.gd" id="3_jckd5"]
 [ext_resource type="Texture2D" uid="uid://b6ooxbxociifn" path="res://assets/close_btns.png" id="3_v8n1c"]
-[ext_resource type="Script" uid="uid://cmw2ufiiekkh5" path="res://scripts/button_effects_module.gd" id="4_jckd5"]
 
 [sub_resource type="Animation" id="Animation_v8n1c"]
 length = 0.001
@@ -80,11 +80,11 @@ region = Rect2(2, 2, 22, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qd3yk"]
 atlas = ExtResource("3_v8n1c")
-region = Rect2(47, 2, 24, 24)
+region = Rect2(48, 4, 24, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2d0fr"]
 atlas = ExtResource("3_v8n1c")
-region = Rect2(24, 2, 24, 24)
+region = Rect2(24, 3, 24, 23)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6sgm"]
 texture = ExtResource("1_kd7d1")
@@ -133,7 +133,7 @@ color = Color(0, 0, 0, 1)
 top_level = true
 anchors_preset = 0
 
-[node name="Close" type="TextureButton" parent="Control" unique_id=1340721160]
+[node name="Close" type="TextureButton" parent="Control" unique_id=1826882036]
 layout_mode = 0
 offset_right = 22.0
 offset_bottom = 24.0
@@ -145,10 +145,8 @@ texture_normal = SubResource("AtlasTexture_jckd5")
 texture_pressed = SubResource("AtlasTexture_qd3yk")
 texture_hover = SubResource("AtlasTexture_2d0fr")
 stretch_mode = 3
-
-[node name="ButtonEffectsModule" type="Node" parent="Control/Close" unique_id=593946844]
-script = ExtResource("4_jckd5")
-metadata/_custom_type_script = "uid://cmw2ufiiekkh5"
+script = ExtResource("3_jckd5")
+metadata/_custom_type_script = "uid://dpvketnnas4bp"
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=536803732]
 layout_mode = 1

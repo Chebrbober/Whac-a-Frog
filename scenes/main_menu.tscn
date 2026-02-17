@@ -3,13 +3,9 @@
 [ext_resource type="Script" uid="uid://oj8a3bh1tf2c" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://dxtxrv7t2gl6j" path="res://assets/parallax_bg.png" id="2_oa1go"]
 [ext_resource type="FontFile" uid="uid://dwrs68ec4iqx0" path="res://assets/Kenney Pixel.ttf" id="3_jk1qb"]
-[ext_resource type="Texture2D" uid="uid://clnjcmvo40053" path="res://assets/start_btn_normal.png" id="4_oa1go"]
-[ext_resource type="Texture2D" uid="uid://dfnc0wrvgb7j8" path="res://assets/start_btn_pressed.png" id="5_tbmy8"]
-[ext_resource type="Texture2D" uid="uid://fhrp3u5hbx73" path="res://assets/start_btn_hover.png" id="6_jk1qb"]
-[ext_resource type="Texture2D" uid="uid://cjxqqule847ry" path="res://assets/exit_btn_normal.png" id="7_5dd4i"]
-[ext_resource type="Script" uid="uid://cmw2ufiiekkh5" path="res://scripts/button_effects_module.gd" id="7_lgwnu"]
-[ext_resource type="Texture2D" uid="uid://bfwhm77cbi61x" path="res://assets/exit_btn_pressed.png" id="8_lgwnu"]
-[ext_resource type="Texture2D" uid="uid://cagyuhotob75c" path="res://assets/exit_btn_hover.png" id="9_flqon"]
+[ext_resource type="Texture2D" uid="uid://c42me5b46v7sv" path="res://assets/start_btns.png" id="4_jk1qb"]
+[ext_resource type="Script" uid="uid://dpvketnnas4bp" path="res://scripts/animated_button.gd" id="5_oa1go"]
+[ext_resource type="Texture2D" uid="uid://fti0y0q8c5ft" path="res://assets/exit_btns.png" id="6_oa1go"]
 [ext_resource type="PackedScene" uid="uid://c1ksiui82njv7" path="res://scenes/select_difficulty_panel.tscn" id="10_5dd4i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
@@ -17,6 +13,30 @@ font = ExtResource("3_jk1qb")
 font_size = 48
 outline_size = 5
 outline_color = Color(0.11372549, 0.07450981, 0.20784314, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dd4i"]
+atlas = ExtResource("4_jk1qb")
+region = Rect2(5, 1, 53, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgwnu"]
+atlas = ExtResource("4_jk1qb")
+region = Rect2(132, 2, 55, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flqon"]
+atlas = ExtResource("4_jk1qb")
+region = Rect2(68, 1, 55, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbmy8"]
+atlas = ExtResource("6_oa1go")
+region = Rect2(6, 1, 53, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk1qb"]
+atlas = ExtResource("6_oa1go")
+region = Rect2(133, 2, 55, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcqid"]
+atlas = ExtResource("6_oa1go")
+region = Rect2(69, 1, 55, 24)
 
 [node name="MainMenu" type="Node2D" unique_id=556194598]
 script = ExtResource("1_ekxnf")
@@ -51,35 +71,32 @@ uppercase = true
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Play" type="TextureButton" parent="Control/VBoxContainer" unique_id=1399534597]
+[node name="Play" type="TextureButton" parent="Control/VBoxContainer" unique_id=845919013]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("4_oa1go")
-texture_pressed = ExtResource("5_tbmy8")
-texture_hover = ExtResource("6_jk1qb")
+texture_normal = SubResource("AtlasTexture_5dd4i")
+texture_pressed = SubResource("AtlasTexture_lgwnu")
+texture_hover = SubResource("AtlasTexture_flqon")
 stretch_mode = 3
+script = ExtResource("5_oa1go")
+metadata/_custom_type_script = "uid://dpvketnnas4bp"
 
-[node name="ButtonEffectsModule" type="Node" parent="Control/VBoxContainer/Play" unique_id=311316763]
-script = ExtResource("7_lgwnu")
-metadata/_custom_type_script = "uid://cmw2ufiiekkh5"
-
-[node name="Quit" type="TextureButton" parent="Control/VBoxContainer" unique_id=1300125535]
+[node name="Quit" type="TextureButton" parent="Control/VBoxContainer" unique_id=80698600]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("7_5dd4i")
-texture_pressed = ExtResource("8_lgwnu")
-texture_hover = ExtResource("9_flqon")
+texture_normal = SubResource("AtlasTexture_tbmy8")
+texture_pressed = SubResource("AtlasTexture_jk1qb")
+texture_hover = SubResource("AtlasTexture_rcqid")
 stretch_mode = 3
-
-[node name="ButtonEffectsModule" type="Node" parent="Control/VBoxContainer/Quit" unique_id=1030987181]
-script = ExtResource("7_lgwnu")
-metadata/_custom_type_script = "uid://cmw2ufiiekkh5"
+script = ExtResource("5_oa1go")
+metadata/_custom_type_script = "uid://dpvketnnas4bp"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=517218939]
 
 [node name="SelectDifficultyPanel" parent="CanvasLayer" unique_id=1619400180 instance=ExtResource("10_5dd4i")]
+visible = false
 
 [connection signal="pressed" from="Control/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -2,18 +2,38 @@
 
 [ext_resource type="PackedScene" uid="uid://qfs4jn26m7or" path="res://scenes/base_panel.tscn" id="1_imhx2"]
 [ext_resource type="Script" uid="uid://cqo3lkcf72fws" path="res://scripts/pause_panel.gd" id="2_ndesk"]
-[ext_resource type="Texture2D" uid="uid://e3verp7gjwvi" path="res://assets/resume_btn_normal.png" id="3_43378"]
-[ext_resource type="Texture2D" uid="uid://3tjw6n8xltiw" path="res://assets/resume_btn_pressed.png" id="4_v4nyy"]
-[ext_resource type="Texture2D" uid="uid://dgfo01y0hprnh" path="res://assets/resume_btn_hover.png" id="5_5jc26"]
-[ext_resource type="Script" uid="uid://cmw2ufiiekkh5" path="res://scripts/button_effects_module.gd" id="6_ndesk"]
-[ext_resource type="Texture2D" uid="uid://bujumsht373ws" path="res://assets/home_btn_normal.png" id="6_r664t"]
-[ext_resource type="Texture2D" uid="uid://6733ny1gkrfd" path="res://assets/home_btn_pressed.png" id="7_a0rnc"]
-[ext_resource type="Texture2D" uid="uid://lb6fcb2wv65x" path="res://assets/home_btn_hover.png" id="8_4cnuc"]
+[ext_resource type="Texture2D" uid="uid://doo0qhvj15u74" path="res://assets/resume_btns.png" id="3_ubr0n"]
+[ext_resource type="Script" uid="uid://dpvketnnas4bp" path="res://scripts/animated_button.gd" id="4_ubr0n"]
+[ext_resource type="Texture2D" uid="uid://bu0b2x2f64nlh" path="res://assets/home_btns.png" id="7_potkq"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_imhx2"]
 color = Color(0, 0, 0, 0)
 
 [sub_resource type="Shortcut" id="Shortcut_ndesk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swdjv"]
+atlas = ExtResource("3_ubr0n")
+region = Rect2(4, 1, 57, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_potkq"]
+atlas = ExtResource("3_ubr0n")
+region = Rect2(131, 2, 59, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4nyy"]
+atlas = ExtResource("3_ubr0n")
+region = Rect2(67, 1, 59, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imhx2"]
+atlas = ExtResource("7_potkq")
+region = Rect2(5, 1, 53, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndesk"]
+atlas = ExtResource("7_potkq")
+region = Rect2(132, 2, 55, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43378"]
+atlas = ExtResource("7_potkq")
+region = Rect2(68, 1, 55, 24)
 
 [node name="PausePanel" unique_id=1619400180 instance=ExtResource("1_imhx2")]
 process_mode = 3
@@ -42,28 +62,25 @@ layout_mode = 2
 theme_override_constants/separation = 12
 alignment = 1
 
-[node name="Resume" type="TextureButton" parent="PanelContainer/VBoxContainer/HBoxContainer" index="0" unique_id=1446366861]
+[node name="Resume" type="TextureButton" parent="PanelContainer/VBoxContainer/HBoxContainer" index="0" unique_id=1366213269]
 layout_mode = 2
 shortcut = SubResource("Shortcut_ndesk")
-texture_normal = ExtResource("3_43378")
-texture_pressed = ExtResource("4_v4nyy")
-texture_hover = ExtResource("5_5jc26")
+texture_normal = SubResource("AtlasTexture_swdjv")
+texture_pressed = SubResource("AtlasTexture_potkq")
+texture_hover = SubResource("AtlasTexture_v4nyy")
 stretch_mode = 3
+script = ExtResource("4_ubr0n")
+metadata/_custom_type_script = "uid://dpvketnnas4bp"
 
-[node name="ButtonEffectsModule" type="Node" parent="PanelContainer/VBoxContainer/HBoxContainer/Resume" index="0" unique_id=1314567989]
-script = ExtResource("6_ndesk")
-metadata/_custom_type_script = "uid://cmw2ufiiekkh5"
-
-[node name="Home" type="TextureButton" parent="PanelContainer/VBoxContainer/HBoxContainer" index="1" unique_id=1768141353]
+[node name="Home" type="TextureButton" parent="PanelContainer/VBoxContainer/HBoxContainer" index="1" unique_id=429674361]
 layout_mode = 2
-texture_normal = ExtResource("6_r664t")
-texture_pressed = ExtResource("7_a0rnc")
-texture_hover = ExtResource("8_4cnuc")
+texture_normal = SubResource("AtlasTexture_imhx2")
+texture_pressed = SubResource("AtlasTexture_ndesk")
+texture_hover = SubResource("AtlasTexture_43378")
 stretch_mode = 3
+script = ExtResource("4_ubr0n")
+metadata/_custom_type_script = "uid://dpvketnnas4bp"
 
-[node name="ButtonEffectsModule" type="Node" parent="PanelContainer/VBoxContainer/HBoxContainer/Home" index="0" unique_id=542941846]
-script = ExtResource("6_ndesk")
-metadata/_custom_type_script = "uid://cmw2ufiiekkh5"
-
+[connection signal="pressed" from="Control/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Home" to="." method="_on_home_pressed"]
