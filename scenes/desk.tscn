@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://ce2fhyv8417hi" path="res://scripts/desk.gd" id="1_em11a"]
 [ext_resource type="PackedScene" uid="uid://cftifgwaaxgmx" path="res://scenes/frog.tscn" id="2_em11a"]
-[ext_resource type="Texture2D" uid="uid://dxtxrv7t2gl6j" path="res://assets/parallax_bg.png" id="3_sista"]
+[ext_resource type="Texture2D" uid="uid://b504flltpjqu" path="res://assets/bg.png" id="3_ngqn4"]
 [ext_resource type="FontFile" uid="uid://dwrs68ec4iqx0" path="res://assets/Kenney Pixel.ttf" id="4_8atfi"]
 [ext_resource type="PackedScene" uid="uid://k6fg4qjehmyw" path="res://scenes/pause_panel.tscn" id="6_ngqn4"]
 [ext_resource type="Texture2D" uid="uid://e406unnksb1o" path="res://assets/desk.png" id="6_y0kep"]
 [ext_resource type="Texture2D" uid="uid://bbppvjmcbcpxj" path="res://assets/heart.png" id="7_63boh"]
 [ext_resource type="Texture2D" uid="uid://cjpcdku6ojnrc" path="res://assets/pause_btns.png" id="8_6cq47"]
+[ext_resource type="PackedScene" uid="uid://b54k167oiehy0" path="res://scenes/game_over.tscn" id="8_63boh"]
 [ext_resource type="Script" uid="uid://dpvketnnas4bp" path="res://scripts/animated_button.gd" id="9_ngqn4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vxfw4"]
@@ -43,10 +44,19 @@ region = Rect2(27, 2, 24, 23)
 script = ExtResource("1_em11a")
 frog_scene = ExtResource("2_em11a")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1453181537]
-position = Vector2(192, 93)
-scale = Vector2(0.76799995, 0.5)
-texture = ExtResource("3_sista")
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=323352136]
+process_mode = 3
+repeat_size = Vector2(128, 128)
+autoscroll = Vector2(4, 4)
+
+[node name="Background" type="TextureRect" parent="Parallax2D" unique_id=348102091]
+z_index = -4096
+offset_left = -65.0
+offset_top = -70.0
+offset_right = 471.28845
+offset_bottom = 283.0
+texture = ExtResource("3_ngqn4")
+stretch_mode = 1
 
 [node name="Timer" type="Timer" parent="." unique_id=2004553772]
 wait_time = 2.0
@@ -100,6 +110,8 @@ texture = SubResource("AtlasTexture_5dl07")
 
 [node name="PausePanel" parent="CanvasLayer" unique_id=1619400180 instance=ExtResource("6_ngqn4")]
 visible = false
+
+[node name="GameOver" parent="CanvasLayer" unique_id=1924457286 instance=ExtResource("8_63boh")]
 
 [node name="Pause" type="TextureButton" parent="." unique_id=1107231629]
 offset_left = 4.0

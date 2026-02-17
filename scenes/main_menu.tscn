@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://vqh5mw41w124"]
 
 [ext_resource type="Script" uid="uid://oj8a3bh1tf2c" path="res://scripts/main_menu.gd" id="1_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://dxtxrv7t2gl6j" path="res://assets/parallax_bg.png" id="2_oa1go"]
+[ext_resource type="Texture2D" uid="uid://b504flltpjqu" path="res://assets/bg.png" id="2_oa1go"]
 [ext_resource type="FontFile" uid="uid://dwrs68ec4iqx0" path="res://assets/Kenney Pixel.ttf" id="3_jk1qb"]
-[ext_resource type="Texture2D" uid="uid://c42me5b46v7sv" path="res://assets/start_btns.png" id="4_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://ucfqvfkou2nm" path="res://assets/start_btns.png" id="4_jk1qb"]
 [ext_resource type="Script" uid="uid://dpvketnnas4bp" path="res://scripts/animated_button.gd" id="5_oa1go"]
 [ext_resource type="Texture2D" uid="uid://fti0y0q8c5ft" path="res://assets/exit_btns.png" id="6_oa1go"]
 [ext_resource type="PackedScene" uid="uid://c1ksiui82njv7" path="res://scenes/select_difficulty_panel.tscn" id="10_5dd4i"]
@@ -41,24 +41,29 @@ region = Rect2(69, 1, 55, 24)
 [node name="MainMenu" type="Node2D" unique_id=556194598]
 script = ExtResource("1_ekxnf")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1623011452]
-position = Vector2(192, 109)
-scale = Vector2(0.76799995, 0.436)
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=2043535357]
+process_mode = 3
+repeat_size = Vector2(128, 128)
+autoscroll = Vector2(4, 4)
+
+[node name="Background" type="TextureRect" parent="Parallax2D" unique_id=1092599349]
+z_index = -4096
+offset_left = -65.0
+offset_top = -70.0
+offset_right = 471.28845
+offset_bottom = 283.0
 texture = ExtResource("2_oa1go")
+stretch_mode = 1
 
-[node name="Control" type="Control" parent="." unique_id=60007438]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1689412678]
-layout_mode = 0
+[node name="Control" type="CenterContainer" parent="." unique_id=664554757]
 offset_right = 384.0
 offset_bottom = 216.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1689412678]
+layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Control/VBoxContainer" unique_id=135590591]
+[node name="Title" type="Label" parent="Control/VBoxContainer" unique_id=135590591]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "WHAC-A-FROG"

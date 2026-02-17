@@ -10,7 +10,7 @@ class_name AnimatedTextureButton
 @export var hover_duration: float = 0.2
 @export var un_hover_duration: float = 0.2
 
-@export_category("press")
+@export_category("Press")
 @export var press_scale: Vector2 = Vector2(0.95, 0.95)
 @export var press_animation_duration_1: float = 0.2
 @export var press_animation_duration_2: float = 0.2

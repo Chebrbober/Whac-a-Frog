@@ -6,6 +6,7 @@ extends Node2D
 @onready var timer: Timer = $Timer
 @onready var score_label: Label = $ScoreLabel
 @onready var pause_panel: Control = $CanvasLayer/PausePanel
+@onready var game_over: Control = $CanvasLayer/GameOver
 
 @onready var heart1: TextureRect = $CanvasLayer/HBoxContainer/TextureRect
 @onready var heart2: TextureRect = $CanvasLayer/HBoxContainer/TextureRect2
@@ -87,16 +88,16 @@ func _on_frog_escaped():
 	update_hearts()
 
 	if lives <= 0:
-		game_over()
+		game_lost()
 
 func update_hearts():
 	for i in range(hearts.size()):
 		if hearts[i] != null:
 			hearts[i].visible = i <lives
 
-func game_over():
+func game_lost():
 	print("You lost!")
-	FadeTransition.travel_to_scene("res://scenes/main_menu.tscn")
+	game_over.open()
 
 func _on_pause_pressed() -> void:
 	pause_panel.open()

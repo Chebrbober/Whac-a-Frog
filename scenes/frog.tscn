@@ -117,7 +117,7 @@ tracks/2/path = NodePath("Area2D/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.375, 1.6011),
+"times": PackedFloat32Array(0, 0.35, 1.6011),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -215,7 +215,7 @@ animation = &"hurted_out"
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_rq8tc"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_1g2vb"]
-graph_offset = Vector2(103.244965, 327.36542)
+graph_offset = Vector2(4.627823, 219.20157)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_rq8tc")
 nodes/TimeScale/position = Vector2(112.200005, 110.00001)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_rq8tc")
@@ -475,7 +475,7 @@ libraries/ = SubResource("AnimationLibrary_rq8tc")
 reset_on_save = false
 tree_root = SubResource("AnimationNodeStateMachine_mokc4")
 anim_player = NodePath("../AnimationPlayer")
-parameters/HurtedOut/TimeScale/scale = 1.5
+parameters/HurtedOut/TimeScale/scale = 1.6499999999999986
 parameters/InOut/TimeScale/scale = 1.0
 parameters/None/TimeScale/scale = 1.0
 
