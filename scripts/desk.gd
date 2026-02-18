@@ -49,7 +49,7 @@ func spawn_frogs():
 	var rows: int = 2
 	var spacing_x: int = 60
 	var spacing_y: int = 40
-	var start_pos: Vector2 = Vector2(130, 120)
+	var start_pos: Vector2 = Vector2(130, 115)
 
 	for row in range(rows):
 		for col in range(columns):
