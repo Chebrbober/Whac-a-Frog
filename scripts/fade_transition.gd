@@ -9,6 +9,7 @@ func travel_to_scene(path_to_scene) -> void:
 
 	get_tree().change_scene_to_file(path_to_scene)
 	anim_player.play_backwards('fade')
+	get_tree().paused = false
 	await anim_player.animation_finished
 
 	get_tree().get_root().set_disable_input(false)

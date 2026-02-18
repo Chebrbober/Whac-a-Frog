@@ -27,9 +27,7 @@ func pop_up(node_path: NodePath) -> void:
 	tween.tween_property(object, "scale", Vector2.ONE, 0.2).from(Vector2.ZERO)
 
 func _on_home_pressed() -> void:
-	get_tree().paused = false
 	FadeTransition.travel_to_scene("res://scenes/main_menu.tscn")
 
 func _on_restart_pressed() -> void:
-	get_tree().paused = false
 	FadeTransition.travel_to_scene("res://scenes/desk.tscn")

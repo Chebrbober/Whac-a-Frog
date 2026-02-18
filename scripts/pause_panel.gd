@@ -10,7 +10,6 @@ func resume():
 	super.close()
 
 func _on_home_pressed() -> void:
-	get_tree().paused = false
 	FadeTransition.travel_to_scene("res://scenes/main_menu.tscn")
 
 func _on_resume_pressed() -> void:
