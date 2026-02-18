@@ -148,6 +148,8 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 text = "Game Over"
 label_settings = SubResource("LabelSettings_uwdrl")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=468366866]
 modulate = Color(1, 1, 1, 0)

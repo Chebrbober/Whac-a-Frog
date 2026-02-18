@@ -7,9 +7,10 @@ extends Control
 
 var tween: Tween
 
-func open():
+func open(text: String) -> void:
 	get_tree().paused = true
 	show()
+	title.text = text
 	if anim_player:
 		anim_player.play("appear")
 

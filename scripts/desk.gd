@@ -16,6 +16,7 @@ var limit_wait_time: float = 1.1
 var current_speed: float = 1.0
 var speed_step: float = 0.1
 var frog_array: Array = []
+var win_score: int = 0
 var hearts: Array = []
 var score: int = 0
 var lives: int = 3
@@ -34,6 +35,7 @@ func _ready() -> void:
 	timer.wait_time = config["wait_time"]
 	current_speed = config["speed"]
 	speed_step = config["speed_step"]
+	win_score = config["win_score"]
 
 	timer.autostart = true
 	timer.start() 
@@ -80,8 +82,9 @@ func _on_timer_timeout() -> void:
 
 func _on_frog_hurted() -> void:
 	score += 1
-	score_label.text = str(score)
-	print(score_label.text)
+	if score == win_score:
+		score_label.text = str(score) + "/" + str(win_score)
+		game_won()
 
 func _on_frog_escaped():
 	lives -=1
@@ -96,8 +99,13 @@ func update_hearts():
 			hearts[i].visible = i <lives
 
 func game_lost():
-	print("You lost!")
-	game_over.open()
+	game_over.open("You lost!")
+
+func game_won():
+	game_over.open("You won!")
 
 func _on_pause_pressed() -> void:
 	pause_panel.open()
+
+func _process(delta: float) -> void:
+	score_label.text = str(score) + "/" + str(win_score)
