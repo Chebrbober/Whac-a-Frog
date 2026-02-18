@@ -112,6 +112,7 @@ texture = SubResource("AtlasTexture_5dl07")
 visible = false
 
 [node name="GameOver" parent="CanvasLayer" unique_id=1924457286 instance=ExtResource("8_63boh")]
+visible = false
 
 [node name="Pause" type="TextureButton" parent="." unique_id=1107231629]
 offset_left = 4.0

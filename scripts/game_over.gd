@@ -1,16 +1,29 @@
 extends Control
 
-@onready var title: Label = $CenterContainer/VBoxContainer/Title
+@onready var title: Label = $VBoxContainer/Title
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var restart_button: TextureButton = $VBoxContainer/HBoxContainer/Restart
+@onready var home_button: TextureButton = $VBoxContainer/HBoxContainer/Home
 
-func _ready() -> void:
-	hide()
+var tween: Tween
 
 func open():
 	get_tree().paused = true
 	show()
 	if anim_player:
-		anim_player.play("blur")
+		anim_player.play("appear")
+
+func pop_up(node_path: NodePath) -> void:
+	if tween:
+		tween.kill()
+
+	var object = get_node(node_path) as Control
+	object.modulate = Color(1, 1, 1, 1)
+	pivot_offset = object.get_rect().size / 2
+	object.scale = Vector2.ZERO
+
+	tween = create_tween().set_trans(Tween.TransitionType.TRANS_EXPO).set_ease(Tween.EaseType.EASE_IN_OUT)
+	tween.tween_property(object, "scale", Vector2.ONE, 0.2).from(Vector2.ZERO)
 
 func _on_home_pressed() -> void:
 	get_tree().paused = false
